@@ -1,0 +1,50 @@
+services:
+  backend:
+    depends_on:
+      - postgres
+    container_name: backend
+    build: ./django/
+    image: backend
+    volumes:
+      - django_data:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    networks:
+      - ft_form
+    restart: always
+  
+  postgres:
+    restart: always
+    build: ./postgres
+    image: postgres
+    container_name: postgres
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    networks:
+      - ft_form
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  
+volumes:
+  postgres_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: "/data/postgres_data"
+      o: bind
+  django_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: "./django"
+      o: bind
+
+networks:
+  ft_form:
+    name: ft_form
+    driver: bridge
+    
