@@ -28,6 +28,8 @@ services:
       - ft_form
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - type: tmpfs
+        target: /var/lib/postgresql/data
   
 volumes:
   postgres_data:
