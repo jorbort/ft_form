@@ -1,0 +1,22 @@
+###
+
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username": "dina1", "password": "12345"
+}
+
+### 
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{
+    "username": "dina1", "password": "12345", "email": "dina@mail.ru"
+}
+
+###
+GET http://127.0.0.1:8000/token/
+Content-Type: application/json
+
+{}

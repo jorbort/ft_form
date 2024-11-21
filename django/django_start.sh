@@ -29,4 +29,5 @@ python3 manage.py collectstatic --no-input
 # python3 -c "import django; django.setup()"
 
 
-gunicorn --bind 0.0.0.0:8000 ft_form.wsgi:application
+gunicorn --bind 0.0.0.0:8000 ft_form.wsgi:application \
+    --env DJANGO_SETTINGS_MODULE=ft_form.settings
