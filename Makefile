@@ -1,6 +1,6 @@
 up:	
 	@if [ ! -d "data/postgres_data" ]; then \
-		sudo mkdir -p "data/postgres_data"; \
+		mkdir -p "data/postgres_data"; \
 	fi
 	docker-compose up 
 down:
@@ -9,7 +9,7 @@ down:
 		docker image rmi $$(docker image ls -aq); \
 	fi
 clean:
-	sudo rm -rf "/data/postgres_data"
+	rm -rf /data/postgres_data/*
 	docker stop $$(docker ps -aq)
 	docker rm $$(docker ps -aq)
 	docker image rmi $$(docker image ls -aq)
