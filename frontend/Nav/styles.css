@@ -1,0 +1,42 @@
+.Nav-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #333;
+	color: black;
+	padding: 10px 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 1000; /* Ensure it stays on top of other elements */
+  }
+  
+  .image-class {
+	width: 60px;
+	height: auto;
+	border: 2px solid #ccc;
+	border-radius: 50px;
+  }
+
+  .logout-class {
+	border-radius: 10px;
+	border: 0px solid #FF5151;
+	background: #FF5151;
+	width: 126px;
+	height: 54px;
+	flex-shrink: 0;
+
+	position: absolute;
+	top: 20%;
+	right: 5%;
+	color: #353333;
+	text-align: center;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.2em;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	}
+	.logout-class:hover {
+		background: #fc6464;
+		/* color: white; */
+	}
