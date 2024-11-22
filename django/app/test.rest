@@ -18,5 +18,6 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/token/
 Content-Type: application/json
+Authorization: Token 0c6ccfe5e4856ff8d0793b80196f4cd7d73fa4ad
 
 {}

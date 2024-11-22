@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .serializers import UserSerializer
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.authtoken.models import Token
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 
 
@@ -40,6 +42,8 @@ def signup(request):
 	return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def token(request):
-	return Response({})
+	return Response("passed for {}".format(request.user.email))
 
