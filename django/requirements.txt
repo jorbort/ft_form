@@ -9,3 +9,4 @@ djangorestframework==3.15.2
 PyJWT==2.9.0
 gunicorn
 django-allauth
+whitenoise==6.8.2
