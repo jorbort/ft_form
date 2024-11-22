@@ -11,7 +11,7 @@
 
 ## Frontend Developer usage
 #### Add [___Live Preview___](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) extension from Microsoft to Visual Studio 
-![image](https://github.com/user-attachments/assets/b3a2121b-1187-4bac-bdf7-13753b6cf6d9)
+![388935215-b3a2121b-1187-4bac-bdf7-13753b6cf6d9](https://github.com/user-attachments/assets/5ff08a01-ea33-4e69-b787-cccd0504dc85)
 Open the root index.html and click on the right corner logo to open the Live Preview. Example Above
 # OR
 #### Install npm 
