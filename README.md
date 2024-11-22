@@ -13,6 +13,7 @@
 #### Add [___Live Preview___](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server) extension from Microsoft to Visual Studio 
 ![image](https://github.com/user-attachments/assets/b3a2121b-1187-4bac-bdf7-13753b6cf6d9)
 Open the root index.html and click on the right corner logo to open the Live Preview. Example Above
+# OR
 #### Install npm 
 * try npm -v to see if npm is installed
 * `apt-get update && apt-get install npm` for installing npm if it is not installed in yout machine
