@@ -85,3 +85,8 @@
 	justify-content: right;
   }
   
+
+.badge {
+    margin: 5px !important;
+    font-size: 1.1em !important;
+}

@@ -19,7 +19,6 @@ class AdminForms extends HTMLElement {
 		  </div>
 		</div>
 	  `;
-  
 	  this.importStyles();
 	  
 	  // Add dynamic cards
@@ -79,16 +78,24 @@ class AdminForms extends HTMLElement {
 	  this.shadow.appendChild(generalBootstrap);
 	  this.shadow.appendChild(bootstrap);
 	}
-  
+	handleCardClick(id)
+	{
+		console.log('Card clicked', id);
+		// Redirect to the form page
+		// window.location.href = `/form/?id=${id}`;
+	}
+	handleCardFavorite(id) {
+		console.log('Star clicked', id);
+	}
 	addCard({ id, title, startDate, endDate, badges = [] }) {
 	  const GridOfCards = this.container.querySelector('#appendCardsHere');
   
 	  if (GridOfCards) {
 		const card = document.createElement('section');
 		card.classList.add('col-12', 'col-sm-6', 'col-md-4');
-		card.setAttribute('data-id', id); // Assign unique ID to the card
+		card.setAttribute('data-id', id);
 		card.innerHTML = `
-		  <div class="card">
+		  <div class="card mb-4">
 			<div class="card-body">
 			  <!-- Row 1: Header Section -->
 			  <div class="row" id="row-header">
@@ -139,17 +146,22 @@ class AdminForms extends HTMLElement {
 		`;
   
 		// Attach click event to the card
-		card.addEventListener('click', () => this.handleCardClick(id));
-  
+		card.addEventListener('click', (event) => {
+			if (!event.target.closest('#star')) {
+				this.handleCardClick(id);
+			}
+		});
+		// Attach click event to the star favorite
+		let star = card.querySelector('#star');
+		star.addEventListener('click', () => this.handleCardFavorite(id));
 		GridOfCards.appendChild(card);
 	  }
-	}
-  
-	handleCardFavorite(id) {
 		
 	}
+  
 	connectedCallback() {
 		console.log('Admin Forms mounted');
+		
 	}
   }
   
